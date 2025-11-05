@@ -1,6 +1,6 @@
 ---
 - name: Installer Nginx ou le mettre à jour
-  hosts: localhost
+  hosts: all
   become: yes
   tasks:
     - name: Installer ou mettre à jour Nginx
