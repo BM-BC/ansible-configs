@@ -1,1 +1,13 @@
+---
+- name: Mise à jour des paquets apt sur les serveurs Debian/Ubuntu
+  hosts: all
+  become: yes   # pour exécuter les tâches avec sudo
+  tasks:
 
+    - name: Mettre à jour la liste des paquets
+      apt:
+        update_cache: yes
+
+    - name: Vérifier qu'aucun paquet cassé n'existe
+      apt:
+        state: latest
